@@ -1,0 +1,12 @@
+Hello everyone ----
+\
+THIS IS THE PROJECT OF MYSQL IN WHICH,
+
+I had done many queries related to the database,
+
+There are the 3 tables Salespeople,Customers,Orders where i inserted the data and used some queries to fetch certain data.
+
+Any combination of data fetching is done by me..
+
+Hope you will like it....
+
