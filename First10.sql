@@ -7,14 +7,14 @@ select * from Salespople;
 
 /*----------------
 2) List all customers with a rating of 100
-here is the query to display customers of 100 rating;
+here is the query to display customers of 100 rating where i used = function;
 */                    -------------------------
 
 select * from Customers where RATING=100;
 
 /*------------------
 3) Find the largest order taken by each salesperson on each date
-here you can see the below query where i used join operation to run the query
+here you can see the below query where i used join operation to run the query here SNUM is the foreign key to join the tables ,use of order by to order the table in ascending order.
 /*                     -------------------------
 
 select Orders.AMT,Salespeople.SNUM,Salespeople.SNAME from Salespeople inner join Orders on Salespeople.SNUM=Orders.SNUM order by Orders.AMT;
@@ -36,6 +36,7 @@ select distinct(Salespeople.SNAME),Salespeople.SNUM,Orders.SNUM from Salespeople
 /*----------------------
 6) List names of all customers matched with the salespeople serving them
 here you can see the usage of simple left join we can get the above data
+here we have to find all the customers of each salespeople that we are serving.
 */                        ---------------------------
 
 select Customers.CNAME,Customers.SNUM,Salespeople.SNAME from Customers left join Salespeople on Customers.SNUM=Salespeople.SNUM;
@@ -50,6 +51,7 @@ select Salespeople.SNAME,Salespeople.SNUM,count(Salespeople.SNUM)>1 from Salespe
 /*---------------------------
 8) Count the orders of each of the salespeople and output the results in descending order.
 here you can see the usage of count() again but this time we used group by,desc also to get the data.
+I personally used left join in this query so that all the data from the left mentioned table we get fetched and the matching with the second table we can get.
 */                              --------------------
 
  select Salespeople.SNAME,count(Orders.SNUM) from Salespeople left join Orders on Salespeople.SNUM=Orders.SNUM  group by Orders.SNUM  order by count(Orders.SNUM) desc;
